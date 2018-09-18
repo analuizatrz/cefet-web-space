@@ -11,20 +11,16 @@
 // }
 
 //1.2
-const elementos = document.querySelectorAll('.botao-expandir-retrair');
+const botoes = document.querySelectorAll('.botao-expandir-retrair');
 
-for(let e of elementos){
-	e.addEventListener('click', function(evt){
-		let el = evt.currentTarget;
-		let expanded = e.parentNode.classList.toggle('expandido');
+for(let botao of botoes){
+	botao.addEventListener('click', (event) => {
+		let element = event.currentTarget
 
-		if(expanded){
-			el.innerHTML = '-';
-		}
-		else{
-			el.innerHTML = '+';
-		}
-
+		if(element.parentNode.classList.toggle('expandido'))
+			element.innerHTML = '-'
+		else
+			element.innerHTML = '+'
 	});
 }
 
