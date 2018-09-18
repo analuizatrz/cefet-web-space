@@ -16,6 +16,15 @@ const elementos = document.querySelectorAll('.botao-expandir-retrair');
 for(let e of elementos){
 	e.addEventListener('click', function(evt){
 		let el = evt.currentTarget;
-		e.parentNode.classList.toggle('expandido');
+		let expanded = e.parentNode.classList.toggle('expandido');
+
+		if(expanded){
+			el.innerHTML = '-';
+		}
+		else{
+			el.innerHTML = '+';
+		}
+
 	});
 }
+
